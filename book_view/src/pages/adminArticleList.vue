@@ -10,7 +10,7 @@
           <admin-menu></admin-menu>
         </i-col>
         <i-col span="20" offset="1">
-          <h2 style="padding-top: 20px; font-size: 24px">影评列表</h2>
+          <h2 style="padding-top: 20px; font-size: 24px">评论列表</h2>
           <Divider />
           <Table :loading="loadFlag" :columns="columns" :data="articleData" height="700" size="large" ref="table" border=true>
             <template slot-scope="{ row, index }" slot="_id">
@@ -79,17 +79,17 @@ export default {
       loadFlag: true,
       columns: [
         {
-          title: '影评ID',
+          title: '评论ID',
           slot: '_id',
           width: 150
         },
         {
-          title: '影评标题',
+          title: '评论标题',
           slot: 'articleTitle',
           width: 320
         },
         {
-          title: '影评内容',
+          title: '评论内容',
           slot: 'articleContext'
         },
         {
@@ -181,7 +181,7 @@ export default {
     }
   },
   created () {
-    // 获取影评列表
+    // 获取评论列表
     this.$http.get('http://localhost:3000/admin/article').then((data) => {
       this.articleData = data.body.data
       this.loadFlag = false
@@ -198,7 +198,7 @@ export default {
       this.editIndex = index
     },
     handleSave (index) {
-      // 从数据库修改影评
+      // 从数据库修改评论
       let update_data;
       if (typeof (sessionStorage.username) !== 'undefined') {
         update_data = {
@@ -222,7 +222,7 @@ export default {
             // this.$Modal.success({
             //   title: updateData.body.message
             // })
-            // 从页面影评修改影评
+            // 从页面评论修改评论
             this.articleData[index].articleTitle = this.editTitle
             this.articleData[index].articleContext = this.editContext
             this.articleData[index].articleTime = this.editTime
@@ -241,11 +241,11 @@ export default {
       }
     },
     show (index) {
-      this.articleDetail = ` 影评名称：${this.articleData[index].articleTitle}\n\n 影评内容：${this.articleData[index].articleContext}\n\n 发布时间：${this.articleData[index].articleTime}\n\n 主页显示：${this.articleData[index].articleMainPage}`
+      this.articleDetail = ` 评论名称：${this.articleData[index].articleTitle}\n\n 评论内容：${this.articleData[index].articleContext}\n\n 发布时间：${this.articleData[index].articleTime}\n\n 主页显示：${this.articleData[index].articleMainPage}`
       this.showDetail = true
     },
     remove (index) {
-      // 从数据库删除影评
+      // 从数据库删除评论
       let send_data;
       if (typeof (sessionStorage.username) !== 'undefined') {
         send_data = {
@@ -270,7 +270,7 @@ export default {
                 })
               }
             })
-            // 从页面删除影评
+            // 从页面删除评论
             this.articleData.splice(index, 1)
           },
           onCancel: () => {

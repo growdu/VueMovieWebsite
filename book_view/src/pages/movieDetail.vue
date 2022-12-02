@@ -49,7 +49,7 @@ export default {
     this.movie_id = this.$route.query.id
     movie_id = this.$route.query.id
     console.log(movie_id)
-    // 根据id查找电影
+    // 根据id查找课程
     this.$http.post('http://localhost:3000/users/movieDetail', {movie_id: movie_id}).then((detailData) => {
       this.detail = detailData.body.data
       console.log(detailData.body)

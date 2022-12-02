@@ -11,25 +11,25 @@
         <i-col span="20" offset="1">
           <div class="box">
           <div style="width: 800px;padding-top: 6%; alignment: center">
-            <h2>添加影评</h2>
+            <h2>添加评论</h2>
             <Divider />
               <table>
                 <tr>
-                  <td>影评标题：</td>
+                  <td>评论标题：</td>
                   <td>
-                    <i-input type="text" v-model="articleTitle" placeholder="请输入影评标题" autofocus  size="large" clearable style="width: 600px">
+                    <i-input type="text" v-model="articleTitle" placeholder="请输入评论标题" autofocus  size="large" clearable style="width: 600px">
                       <Icon type="ios-person" slot="prepend"></Icon>
                     </i-input>
                   </td>
                 </tr>
                 <tr>
-                  <td>影评内容：</td>
+                  <td>评论内容：</td>
                   <td>
-                    <Input v-model="articleContext" type="textarea" :autosize="{minRows: 8, maxRows: 15}" placeholder="请输入影评内容" />
+                    <Input v-model="articleContext" type="textarea" :autosize="{minRows: 8, maxRows: 15}" placeholder="请输入评论内容" />
                   </td>
                 </tr>
                 <tr style="height: 40px;">
-                  <td>是否在主页显示该影评：</td>
+                  <td>是否在主页显示该评论：</td>
                   <td>
                     <RadioGroup v-model="articleMainPage" size="large">
                       <Radio label="false">否</Radio>
@@ -71,7 +71,7 @@ export default {
   },
   methods: {
     addArticle: function (event) {
-      // 添加影评到数据库
+      // 添加评论到数据库
       let article_data;
       if (typeof (sessionStorage.username) !== 'undefined') {
         article_data = {

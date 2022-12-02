@@ -78,7 +78,7 @@ export default {
           width: 150
         },
         {
-          title: '评论的电影ID',
+          title: '评论的课程ID',
           slot: 'movie_id',
           width: 150
         },
@@ -208,7 +208,7 @@ export default {
       }
     },
     show (index) {
-      this.commentDetail = ` 评论编号：${this.commentData[index]._id}\n\n 评论的电影ID：${this.commentData[index].movie_id}\n\n 评论用户：${this.commentData[index].username}\n\n 评论内容：${this.commentData[index].context}\n\n 是否审核：${this.commentData[index].check}`
+      this.commentDetail = ` 评论编号：${this.commentData[index]._id}\n\n 评论的课程ID：${this.commentData[index].movie_id}\n\n 评论用户：${this.commentData[index].username}\n\n 评论内容：${this.commentData[index].context}\n\n 是否审核：${this.commentData[index].check}`
       this.showDetail = true
     },
     remove (index) {

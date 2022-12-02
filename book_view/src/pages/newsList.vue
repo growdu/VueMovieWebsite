@@ -7,7 +7,7 @@
       <div>
         <div class="contentLeft"></div>
         <h3 slot="title" style="font-size: 16px;">
-          <Icon type="ios-document"></Icon>影评列表
+          <Icon type="ios-document"></Icon>评论列表
           <Divider />
         </h3>
         <ul class="cont-ul">

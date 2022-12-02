@@ -14,17 +14,18 @@
         <i-col span="11" offset="1">
           <Card>
             <p slot="title" style="font-size: 16px;">
-              <Icon type="ios-videocam"></Icon>热映电影
+              <Icon type="ios-videocam"></Icon>热门课程
             </p>
             <ul class="cont-ul">
               <movies-list v-for="item in movieItems" v-bind:key="item._id" v-bind:id="item._id" v-bind:movieName="item.movieName" v-bind:movieTime="item.movieTime"></movies-list>
             </ul>
           </Card>
         </i-col>
+
         <i-col span="10" offset="1">
           <Card>
             <p slot="title" style="font-size: 16px;">
-              <Icon type="ios-document"></Icon>最新影评
+              <Icon type="ios-videocam"></Icon>最新课程
             </p>
             <ul class="cont-ul">
               <news-list v-for="item in newsItems" v-bind:key="item._id" v-bind:id="item._id" v-bind:articleTitle="item.articleTitle" v-bind:articleTime="item.articleTime"></news-list>

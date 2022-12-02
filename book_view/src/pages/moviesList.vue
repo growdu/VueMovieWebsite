@@ -7,7 +7,7 @@
       <div>
         <div class="contentLeft"></div>
           <h3 slot="title" style="font-size: 16px;">
-            <Icon type="ios-videocam"></Icon>电影列表
+            <Icon type="ios-videocam"></Icon>课程列表
             <Divider />
           </h3>
         <ul>
@@ -34,7 +34,7 @@ export default {
     }
   },
   created () {
-    // 获取电影列表
+    // 获取课程列表
     this.$http.get('http://localhost:3000/showMovie').then((data) => {
       this.movieItems = data.body.data
       console.log(data.body)

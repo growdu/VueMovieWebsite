@@ -33,7 +33,7 @@ export default {
   created () {
     this.article_id = this.$route.query.id
     article_id = this.$route.query.id
-    // 根据id查找电影
+    // 根据id查找课程
     this.$http.post('http://localhost:3000/users/articleDetail', {article_id: article_id}).then((detailData) => {
       this.detail = detailData.body.data
     })

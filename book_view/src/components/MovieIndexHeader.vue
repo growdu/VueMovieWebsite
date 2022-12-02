@@ -7,12 +7,12 @@
     </router-link>
     <router-link to="/movieList">
       <MenuItem name="2">
-        <Icon type="ios-videocam"></Icon>电影
+        <Icon type="ios-videocam"></Icon>课程
       </MenuItem>
     </router-link>
     <router-link to="/newsList">
       <MenuItem name="2">
-        <Icon type="ios-document"></Icon>影评
+        <Icon type="ios-document"></Icon>评论
       </MenuItem>
     </router-link>
   </Menu>

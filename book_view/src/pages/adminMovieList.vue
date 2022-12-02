@@ -10,7 +10,7 @@
           <admin-menu></admin-menu>
         </i-col>
         <i-col span="20" offset="1">
-          <h2 style="padding-top: 20px; font-size: 24px">电影列表</h2>
+          <h2 style="padding-top: 20px; font-size: 24px">课程列表</h2>
           <Divider />
           <Table :loading="loadFlag" :columns="columns" :data="movieData" height="700" size="large" ref="table" border=true>
             <template slot-scope="{ row, index }" slot="_id">
@@ -100,11 +100,11 @@ export default {
       loadFlag: true,
       columns: [
         {
-          title: '电影ID',
+          title: '课程ID',
           slot: '_id'
         },
         {
-          title: '电影名称',
+          title: '课程名称',
           slot: 'movieName'
         },
         {
@@ -218,7 +218,7 @@ export default {
     }
   },
   created () {
-    // 获取电影列表
+    // 获取课程列表
     this.$http.get('http://localhost:3000/admin/movie').then((data) => {
       this.movieData = data.body.data
       this.loadFlag = false
@@ -239,7 +239,7 @@ export default {
       this.editIndex = index
     },
     handleSave (index) {
-      // 从数据库修改电影
+      // 从数据库修改课程
       let update_data;
       if (typeof (sessionStorage.username) !== 'undefined') {
         update_data = {
@@ -267,7 +267,7 @@ export default {
             // this.$Modal.success({
             //   title: updateData.body.message
             // })
-            // 从页面电影修改电影
+            // 从页面课程修改课程
             this.movieData[index].movieName = this.editName
             this.movieData[index].movieImg = this.editImg
             this.movieData[index].movieVideo = this.editVideo
@@ -290,17 +290,17 @@ export default {
       }
     },
     show (index) {
-      this.movieDetail = ` 电影名称：${this.movieData[index].movieName}\n\n 图片地址：${this.movieData[index].movieImg}\n\n 预告片：${this.movieData[index].movieVideo}\n\n 观看地址：${this.movieData[index].movieDownload}\n\n 上映时间：${this.movieData[index].movieTime}\n\n 点赞数量：${this.movieData[index].movieNumSuppose}\n\n 观看数量：${this.movieData[index].movieNumDownload}\n\n 主页显示：${this.movieData[index].movieMainPage}`
+      this.movieDetail = ` 课程名称：${this.movieData[index].movieName}\n\n 图片地址：${this.movieData[index].movieImg}\n\n 预告片：${this.movieData[index].movieVideo}\n\n 观看地址：${this.movieData[index].movieDownload}\n\n 上映时间：${this.movieData[index].movieTime}\n\n 点赞数量：${this.movieData[index].movieNumSuppose}\n\n 观看数量：${this.movieData[index].movieNumDownload}\n\n 主页显示：${this.movieData[index].movieMainPage}`
       this.showDetail = true
       // this.$Modal.info({
       //   width: 600,
       //   title: '详细信息',
       //   fullscreenable: true,
-      //   content: `电影名称：${this.movieData[index].movieName}<br>图片地址：${this.movieData[index].movieImg}<br>预告片：${this.movieData[index].movieVideo}<br>上映时间：${this.movieData[index].movieTime}<br>点赞数量：${this.movieData[index].movieNumSuppose}<br>观看数量：${this.movieData[index].movieNumDownload}<br>主页显示：${this.movieData[index].movieMainPage}`
+      //   content: `课程名称：${this.movieData[index].movieName}<br>图片地址：${this.movieData[index].movieImg}<br>预告片：${this.movieData[index].movieVideo}<br>上映时间：${this.movieData[index].movieTime}<br>点赞数量：${this.movieData[index].movieNumSuppose}<br>观看数量：${this.movieData[index].movieNumDownload}<br>主页显示：${this.movieData[index].movieMainPage}`
       // })
     },
     remove (index) {
-      // 从数据库删除电影
+      // 从数据库删除课程
       let send_data;
       if (typeof (sessionStorage.username) !== 'undefined') {
         send_data = {
@@ -325,7 +325,7 @@ export default {
                 })
               }
             })
-            // 从页面删除电影
+            // 从页面删除课程
             this.movieData.splice(index, 1)
           },
           onCancel: () => {

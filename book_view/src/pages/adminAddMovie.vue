@@ -11,67 +11,67 @@
         <i-col span="20" offset="1">
           <div class="box">
           <div style="width: 800px;padding-top: 6%; alignment: center">
-            <h2>添加电影</h2>
+            <h2>添加课程</h2>
             <Divider />
               <table>
                 <tr>
-                  <td>电影名称：</td>
+                  <td>课程名称：</td>
                   <td>
-                    <i-input type="text" v-model="movieName" placeholder="请输入电影名称" autofocus  size="large" clearable style="width: 600px">
+                    <i-input type="text" v-model="movieName" placeholder="请输入课程名称" autofocus  size="large" clearable style="width: 600px">
                       <Icon type="ios-person" slot="prepend"></Icon>
                     </i-input>
                   </td>
                 </tr>
                 <tr>
-                  <td>电影图片地址：</td>
+                  <td>课程图片地址：</td>
                   <td>
-                    <i-input type="text" v-model="movieImg" placeholder="请输入电影图片链接" size="large" clearable>
+                    <i-input type="text" v-model="movieImg" placeholder="请输入课程图片链接" size="large" clearable>
                       <Icon type="md-camera" slot="prepend"></Icon>
                     </i-input>
                   </td>
                 </tr>
                 <tr>
-                  <td>电影预告片地址：</td>
+                  <td>课程预告片地址：</td>
                   <td>
-                    <i-input type="text" v-model="movieVideo" placeholder="请输入电影预告片链接"  size="large" clearable>
+                    <i-input type="text" v-model="movieVideo" placeholder="请输入课程预告片链接"  size="large" clearable>
                       <Icon type="ios-videocam" slot="prepend"></Icon>
                     </i-input>
                   </td>
                 </tr>
                 <tr>
-                  <td>电影播放地址：</td>
+                  <td>课程播放地址：</td>
                   <td>
-                    <i-input type="text" v-model="movieDownload" placeholder="请输入电影播放链接" size="large" clearable>
+                    <i-input type="text" v-model="movieDownload" placeholder="请输入课程播放链接" size="large" clearable>
                       <Icon type="md-play" slot="prepend"></Icon>
                     </i-input>
                   </td>
                 </tr>
                 <tr>
-                  <td>电影上映日期：</td>
+                  <td>课程上传日期：</td>
                   <td>
-                    <i-input type="date" v-model="movieTime" placeholder="请输入电影上映日期" size="large" clearable>
+                    <i-input type="date" v-model="movieTime" placeholder="请输入课程上传日期" size="large" clearable>
                       <Icon type="md-calendar" slot="prepend"></Icon>
                     </i-input>
                   </td>
                 </tr>
 <!--                <tr>-->
-<!--                  <td>电影点赞次数：</td>-->
+<!--                  <td>课程点赞次数：</td>-->
 <!--                  <td>-->
-<!--                    <i-input type="text" v-model="movieNumSuppose" placeholder="请输入电影点赞次数（数字）" size="large" clearable number>-->
+<!--                    <i-input type="text" v-model="movieNumSuppose" placeholder="请输入课程点赞次数（数字）" size="large" clearable number>-->
 <!--                      <Icon type="md-thumbs-up" slot="prepend"></Icon>-->
 <!--                    </i-input>-->
 <!--                  </td>-->
 <!--                </tr>-->
 <!--                <tr>-->
-<!--                  <td>电影观看次数：</td>-->
+<!--                  <td>课程观看次数：</td>-->
 <!--                  <td>-->
-<!--                    <i-input type="text" v-model="movieNumDownload" placeholder="请输入电影观看次数（数字）" size="large" clearable number>-->
+<!--                    <i-input type="text" v-model="movieNumDownload" placeholder="请输入课程观看次数（数字）" size="large" clearable number>-->
 <!--                      <Icon type="md-calculator" slot="prepend"></Icon>-->
 <!--                    </i-input>-->
 <!--                  </td>-->
 <!--                </tr>-->
                 <tr style="height: 40px;">
-                  <td>是否在主页显示该电影：</td>
+                  <td>是否在主页显示该课程：</td>
                   <td>
                     <RadioGroup v-model="movieMainPage" size="large">
                       <Radio label="false">否</Radio>
@@ -118,7 +118,7 @@ export default {
   },
   methods: {
     addMovie: function (event) {
-      // 添加电影到数据库
+      // 添加课程到数据库
       let movie_data;
       if (typeof (sessionStorage.username) !== 'undefined') {
         movie_data = {

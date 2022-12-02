@@ -14,25 +14,25 @@
       <Submenu name="1">
         <template slot="title">
           <Icon type="ios-paper" />
-          电影管理
+          课程管理
         </template>
         <router-link :to="{path: '/adminMovieList'}">
-          <MenuItem name="1-1">电影列表</MenuItem>
+          <MenuItem name="1-1">课程列表</MenuItem>
         </router-link>
         <router-link :to="{path: '/adminAddMovie'}">
-          <MenuItem name="1-2">添加电影</MenuItem>
+          <MenuItem name="1-2">添加课程</MenuItem>
         </router-link>
       </Submenu>
       <Submenu name="2">
         <template slot="title">
           <Icon type="ios-people" />
-          影评管理
+          评论管理
         </template>
         <router-link :to="{path: '/adminArticleList'}">
-          <MenuItem name="2-1">影评列表</MenuItem>
+          <MenuItem name="2-1">评论列表</MenuItem>
         </router-link>
         <router-link :to="{path: '/adminAddArticle'}">
-          <MenuItem name="2-2">添加影评</MenuItem>
+          <MenuItem name="2-2">添加评论</MenuItem>
         </router-link>
       </Submenu>
       <Submenu name="3">
